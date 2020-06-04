@@ -1,10 +1,8 @@
 import express, { json } from 'express'
+import routes from './routes'
 
 const app = express();
-
-app.get('/', (req, res) =>{
-    console.log('hello world!')
-    res.json({ nlw: 'hello world teste!'})
-});
+app.use(express.json());  
+app.use(routes);
 
 app.listen(5759);
